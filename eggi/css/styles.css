@@ -1,0 +1,18 @@
+.hero {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

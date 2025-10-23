@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Destination | MegaHoliday Tours</title>
+  <link rel="icon" href="images/MGHOLIDAY.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50">
+
+  <nav class="bg-white shadow p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/MGHOLIDAY.png" alt="MegaHoliday" class="logo-small rounded-md">
+        <span class="text-xl font-bold text-green-700">MegaHoliday Tours</span>
+      </a>
+      <div class="space-x-6">
+        <a class="nav-link text-green-700" href="index.html">Home</a>
+        <a class="nav-link text-green-700" href="destination.html">Destination</a>
+        <a class="nav-link text-green-700" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-12 px-6 container mx-auto">
+    <h1 class="text-3xl font-bold text-center text-green-700 mb-8">Destination</h1>
+    <div id="destination-content" class="max-w-4xl mx-auto"></div>
+
+    <div class="mt-12 text-center" data-aos="fade-up">
+      <h3 class="text-2xl font-semibold text-green-700">🎉 Paket Hemat Wisata</h3>
+      <p class="text-gray-700 mt-3">Nikmati liburan menyenangkan mulai dari <strong>Rp 1.500.000</strong> per orang.</p>
+    </div>
+  </main>
+
+  <script>
+    const destinations = {
+      lampung: {
+        title: "Explore Lampung",
+        image: "images/lampung.jpg",
+        desc: `
+          <p>Lampung terkenal dengan keindahan alam dan pantainya yang memukau. Beberapa destinasi unggulan meliputi:</p>
+          <ul class="list-disc ml-6 mt-3">
+            <li><strong>Pantai Krui</strong> – surga bagi peselancar dengan ombak kelas dunia.</li>
+            <li><strong>Pulau Pahawang</strong> – terkenal dengan spot snorkeling dan keindahan bawah laut.</li>
+            <li><strong>Pulau Wayang</strong> – pulau eksotis dengan formasi batu unik seperti siluet wayang.</li>
+          </ul>
+        `
+      },
+      pengalengan: {
+        title: "Adventure in Pengalengan",
+        image: "images/pengalengan.jpg",
+        desc: `
+          <p>Glamping dan aktivitas outdoor di Pengalengan cocok untuk gathering dan team building:</p>
+          <ul class="list-disc ml-6 mt-3">
+            <li>Glamping nyaman dengan pemandangan kebun teh dan danau.</li>
+            <li>Rafting dan offroad untuk yang suka petualangan.</li>
+            <li>Udara pegunungan yang sejuk dan pemandangan hijau.</li>
+          </ul>
+        `
+      },
+      bromo: {
+        title: "Tour Bromo",
+        image: "images/bromo.jpg",
+        desc: `
+          <p>Gunung Bromo menawarkan pengalaman sunrise yang menakjubkan:</p>
+          <ul class="list-disc ml-6 mt-3">
+            <li>Penanjakan untuk sunrise.</li>
+            <li>Jelajah lautan pasir dan kawah Bromo.</li>
+            <li>Mengenal budaya suku Tengger.</li>
+          </ul>
+        `
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const place = params.get("place");
+    const content = destinations[place] || null;
+    const container = document.getElementById("destination-content");
+
+    if (content) {
+      container.innerHTML = `
+        <div data-aos="fade-up" class="bg-white rounded-2xl shadow-lg p-8">
+          <img src="${content.image}" alt="${content.title}" class="w-full h-72 object-cover rounded-lg mb-6">
+          <h2 class="text-3xl font-bold text-green-700 mb-4">${content.title}</h2>
+          ${content.desc}
+        </div>
+      `;
+    } else {
+      container.innerHTML = `
+        <div data-aos="fade-up" class="grid gap-8 md:grid-cols-1">
+          <div class="bg-white rounded-2xl shadow p-6">
+            <img src="images/lampung.jpg" class="w-full h-56 object-cover rounded mb-4">
+            <h3 class="text-2xl font-semibold">Explore Lampung</h3>
+            <p class="text-gray-600 mt-2">Klik untuk melihat detail tentang Krui, Pahawang, dan Wayang.</p>
+            <p class="mt-4"><a href="destination.html?place=lampung" class="text-green-700 font-semibold">Lihat Detail →</a></p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow p-6">
+            <img src="images/pengalengan.jpg" class="w-full h-56 object-cover rounded mb-4">
+            <h3 class="text-2xl font-semibold">Adventure in Pengalengan</h3>
+            <p class="text-gray-600 mt-2">Glamping, rafting, dan offroad untuk pengalaman seru.</p>
+            <p class="mt-4"><a href="destination.html?place=pengalengan" class="text-green-700 font-semibold">Lihat Detail →</a></p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow p-6">
+            <img src="images/bromo.jpg" class="w-full h-56 object-cover rounded mb-4">
+            <h3 class="text-2xl font-semibold">Tour Bromo</h3>
+            <p class="text-gray-600 mt-2">Sunrise spektakuler dan lautan pasir yang ikonik.</p>
+            <p class="mt-4"><a href="destination.html?place=bromo" class="text-green-700 font-semibold">Lihat Detail →</a></p>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

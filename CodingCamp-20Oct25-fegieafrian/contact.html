@@ -1,50 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact — Fegie Afrian</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | MegaHoliday Tours</title>
+  <link rel="icon" href="images/MGHOLIDAY.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header class="nav">
-    <div class="container">
-      <a class="brand" href="index.html">Fegie Afrian</a>
-      <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<body class="bg-gray-50">
+
+  <nav class="bg-white shadow p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/MGHOLIDAY.png" alt="MegaHoliday" class="logo-small rounded-md">
+        <span class="text-xl font-bold text-green-700">MegaHoliday Tours</span>
+      </a>
+      <div class="space-x-6">
+        <a class="nav-link text-green-700" href="index.html">Home</a>
+        <a class="nav-link text-green-700" href="destination.html">Destination</a>
+        <a class="nav-link text-green-700" href="contact.html">Contact</a>
+      </div>
     </div>
-  </header>
+  </nav>
+  <!-- Contact Section -->
+<section class="py-16 bg-gray-50" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-green-700 mb-4">Mega Holiday Tours</h2>
+    <p class="text-gray-600 mb-8">
+      Agen perjalanan terpercaya di Indonesia yang sudah berpengalaman melayani ribuan pelanggan.
+      Kami hadir untuk mewujudkan perjalanan impian Anda dengan tagline kami:
+      <strong>“Enjoy Your Trip”</strong>
+    </p>
 
-  <main class="content">
-    <div class="container card">
-      <h2>Contact Me</h2>
-      <form id="contactForm" novalidate>
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Your name" required />
+    <!-- Team Photo -->
+    <div class="flex justify-center">
+      <img id="team-photo" src="images/team.jpg" alt="Mega Holiday Team"
+        class="rounded-2xl shadow-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+        style="max-width: 600px;">
+    </div>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+    <!-- Instagram Embed -->
+    <div class="mt-10">
+      <h3 class="text-2xl font-semibold text-green-600 mb-4">Ikuti Kami di Instagram</h3>
+      <iframe src="https://www.instagram.com/mgholidaytours/embed"
+        width="400" height="480" frameborder="0"
+        scrolling="no" allowtransparency="true"
+        class="mx-auto rounded-xl shadow-md">
+      </iframe>
+    </div>
+  </div>
+</section>
 
-        <label for="phone">Phone Number</label>
-        <input id="phone" name="phone" type="tel" placeholder="08xxxxxxx" required />
+<!-- Fade Popup Modal for Image -->
+<div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+  <img id="popup-img" src="images/team.jpg" class="max-w-3xl rounded-2xl shadow-2xl fade-in">
+</div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
 
-        <button type="submit" class="btn">Send Message</button>
-        <p id="status" class="status"></p>
+  <main class="py-12 px-6">
+    <div class="container mx-auto max-w-3xl text-center">
+      <h1 class="text-3xl font-bold text-green-700 mb-4">MegaHoliday Tours</h1>
+      <p class="text-gray-600 mb-6">MegaHoliday Tours adalah agen traveling terpercaya di Indonesia yang berpengalaman membantu wisatawan menjelajahi destinasi terbaik. <span class="italic font-semibold text-green-700">"Enjoy Your Trip"</span></p>
+
+      <form id="contactForm" class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up">
+        <input id="name" type="text" placeholder="Your Name" class="w-full border p-2 mb-4 rounded" required>
+        <input id="email" type="email" placeholder="Your Email" class="w-full border p-2 mb-4 rounded" required>
+        <textarea id="message" placeholder="Your Message" class="w-full border p-2 mb-4 rounded" required></textarea>
+        <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition">Send Message</button>
       </form>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">© 2025 Fegie Afrian. All rights reserved.</div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
